@@ -47,6 +47,12 @@ showColor = (pos) => {
      fill: fil 
     })
   }
+  for (let i=4; i>pos; i--){
+    fil[i].fill = '#eee3ff'
+    this.setState({
+       fill: fil 
+      })
+    }
 }
 
 // showColor2 = (item,pos) => {
