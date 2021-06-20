@@ -9,7 +9,6 @@ export class Content extends Component {
     disabled: true,
     close: false,
     fill: svg,
-    hover: true
   };
 
 //  showColor = this.state.fill.map((item, pos) => {
@@ -40,25 +39,24 @@ export class Content extends Component {
 // })
 
 
-showColor = (item,pos) => {
+showColor = (pos) => {
   const fil = [...this.state.fill]
-  fil[pos].fill = '#B97EFF'
-  // console.log(e.target)
+  for (let i=0; i<=pos; i++){
+  fil[i].fill = '#B97EFF'
   this.setState({
      fill: fil 
     })
+  }
 }
 
-// showColor2 = () => {
-
-//   const fil = this.state.fill
-//   fil[1].fill = '#B97EFF'
-//   // console.log(e.target)
-//   if (fil[1].id === 2){
+// showColor2 = (item,pos) => {
+//   const filq = this.state.fill
+//   for (let i=5; i<=pos; i--){
+//   filq[i].fill = "#eee3ff"
 //   this.setState({
-//      fill: fil 
-//     })}
-//   this.showColor()
+//      fillw: filq
+//     })
+//   }
 // }
 
 
@@ -73,7 +71,7 @@ showColor = (item,pos) => {
 //   }
 // }
 
-  handlePostDescription = () => {
+  handleClose = () => {
     // const temp = false
     this.setState(state =>{
       return {close: !this.state.close}
@@ -86,15 +84,16 @@ showColor = (item,pos) => {
     });
     localStorage.setItem("Text", JSON.stringify(this.state.postDescription));
   };
-  handlePostDescriptionChang = () => {
+
+  handleDisabled = () => {
     this.setState({
       disabled: false,
     });
   };
 
-  handle = this.handlePostDescriptionChang ? "none" : "2px solid red";
+  handle = this.handleDisabled ? "none" : "2px solid red";
 
-  handl = this.handlePostDescription ? "100px" : "251px";
+  handl = this.handleClose ? "100px" : "251px";
 
   // hand = this.state.close ? "none" : "inline-block";
   // ha = (e) => {
@@ -121,7 +120,7 @@ showColor = (item,pos) => {
             fill={item.fill}
             stroke="white"
             strokeWidth="0.5"
-            onClick={()=>this.showColor(item,pos)}
+            onClick={()=>this.showColor(pos)}
             />
       )
   });
@@ -135,7 +134,7 @@ showColor = (item,pos) => {
         <h1 style={{display: this.state.close ? "inline-block" : "none"}}>S</h1>
         <div className="text">
           <ul>
-            <li onClick={this.handlePostDescription} >
+            <li onClick={this.handleClose} >
               <svg
               style={{display: this.state.close ? "none" : "inline-block"}}
                 width="11"
@@ -1041,7 +1040,7 @@ showColor = (item,pos) => {
                 Фокус
                 <button
                   className="editBtn"
-                  onClick={this.handlePostDescriptionChang}
+                  onClick={this.handleDisabled}
                 >
                   <svg
                     width="20"
@@ -1101,7 +1100,7 @@ showColor = (item,pos) => {
                 Книга
                 <button
                   className="editBtn"
-                  onClick={this.handlePostDescriptionChang}
+                  onClick={this.handleDisabled}
                 >
                   <svg
                     width="20"
@@ -1171,7 +1170,7 @@ showColor = (item,pos) => {
                 Инсайт
                 <button
                   className="editBtn1"
-                  onClick={this.handlePostDescriptionChang}
+                  onClick={this.handleDisabled}
                 >
                   <svg
                     width="20"
