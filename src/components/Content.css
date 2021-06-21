@@ -134,7 +134,7 @@ main ul {
   cursor: pointer;
 }
 
-.blue:hover {
+/* .blue:hover {
   fill: #64BDFF;
 }
 
@@ -164,7 +164,7 @@ main ul {
 
 .orange:hover {
   fill: #FFA876;
-}
+} */
 
 a {
   text-decoration: none;

@@ -2,6 +2,13 @@ import "./Content.css";
 import { Component } from "react";
 import { Header } from "./Header";
 import { svg } from "./Logik";
+import { svg1 } from "./Logik";
+import { svg2 } from "./Logik";
+import { svg3 } from "./Logik";
+import { svg4 } from "./Logik";
+import { svg5 } from "./Logik";
+import { svg6 } from "./Logik";
+import { svg7 } from "./Logik";
 
 export class Content extends Component {
   state = {
@@ -9,44 +16,158 @@ export class Content extends Component {
     disabled: true,
     close: false,
     fill: svg,
+    fill1: svg1,
+    fill2: svg2,
+    fill3: svg3,
+    fill4: svg4,
+    fill5: svg5,
+    fill6: svg6,
+    fill7: svg7,
+    hover: false
   };
 
-//  showColor = this.state.fill.map((item, pos) => {
-//   const fil = item.fill
-//   // fil[pos].fill = '#B97EFF'
-//    return (
-  
-//   this.setState({
-//     fill:  fil
-//    })
-
-//    )
-    // const fil = item.fill
-    
-    // fil = '#B97EFF'
-    // fil[1].fill
-    // console.log(e.target)
-    // fil[i].fill = '#B97EFF'
-    // this.setState({
-    //    fill:  fil
-    //   })
-    
-      
-      
-      // else if {
-
-      // }
-// })
-
-
 showColor = (pos) => {
-  const fil = [...this.state.fill]
+  const fil = this.state.fill
+  console.log('клик')
   for (let i=0; i<=pos; i++){
   fil[i].fill = '#B97EFF'
   this.setState({
      fill: fil 
     })
+    
   }
+  for (let i=4; i>pos; i--){
+    fil[i].fill = '#eee3ff'
+    this.setState({
+       fill: fil 
+      })
+      
+    }
+    
+}
+
+showColor1 = (pos) => {
+  const fil = [...this.state.fill1]
+  for (let i=0; i<=pos; i++){
+  fil[i].fill = '#FBF681'
+  this.setState({
+     fill1: fil 
+    })
+  }
+  for (let i=4; i>pos; i--){
+    fil[i].fill = "#fdfce3"
+    this.setState({
+       fill1: fil 
+      })
+    }
+}
+
+showColor2 = (pos) => {
+  const fil = [...this.state.fill2]
+  for (let i=0; i<=pos; i++){
+  fil[i].fill = '#FF71D8'
+  this.setState({
+     fill2: fil 
+    })
+  }
+  for (let i=4; i>pos; i--){
+    fil[i].fill = "#ffe2f8"
+    this.setState({
+       fill2: fil 
+      })
+    }
+}
+
+showColor3 = (pos) => {
+  const fil = [...this.state.fill3]
+  for (let i=0; i<=pos; i++){
+  fil[i].fill = '#81FFB3'
+  this.setState({
+     fill3: fil 
+    })
+  }
+  for (let i=4; i>pos; i--){
+    fil[i].fill = "#e5fff0"
+    this.setState({
+       fill3: fil 
+      })
+    }
+}
+
+showColor4 = (pos) => {
+  const fil = [...this.state.fill4]
+  for (let i=0; i<=pos; i++){
+  fil[i].fill = '#FE6D6D'
+  this.setState({
+     fill4: fil 
+    })
+  }
+  for (let i=4; i>pos; i--){
+    fil[i].fill = "#ffe1e1"
+    this.setState({
+       fill4: fil 
+      })
+    }
+}
+
+showColor5 = (pos) => {
+  const fil = [...this.state.fill5]
+  for (let i=0; i<=pos; i++){
+  fil[i].fill = '#69E4FF'
+  this.setState({
+     fill5: fil 
+    })
+  }
+  for (let i=4; i>pos; i--){
+    fil[i].fill = "#e1faff"
+    this.setState({
+       fill5: fil 
+      })
+    }
+}
+
+showColor6 = (pos) => {
+  const fil = [...this.state.fill6]
+  for (let i=0; i<=pos; i++){
+  fil[i].fill = '#FFA876'
+  this.setState({
+     fill6: fil 
+    })
+  }
+  for (let i=4; i>pos; i--){
+    fil[i].fill = "#ffefe6"
+    this.setState({
+       fill6: fil 
+      })
+    }
+}
+
+showColor7 = (pos) => {
+  const fil = [...this.state.fill7]
+  for (let i=0; i<=pos; i++){
+  fil[i].fill = '#64BDFF'
+  this.setState({
+     fill7: fil 
+    })
+  }
+  for (let i=4; i>pos; i--){
+    fil[i].fill = "#ddf0ff"
+    this.setState({
+       fill7: fil 
+      })
+    }
+}
+
+mouseOver = (pos) => {
+   const fil = [...this.state.fill]
+   console.log('наводка')
+  for (let i=0; i<=pos; i++){
+  fil[i].fill = '#B97EFF'
+  this.setState({
+     fill: fil 
+    })
+    }
+
   for (let i=4; i>pos; i--){
     fil[i].fill = '#eee3ff'
     this.setState({
@@ -55,27 +176,12 @@ showColor = (pos) => {
     }
 }
 
-// showColor2 = (item,pos) => {
-//   const filq = this.state.fill
-//   for (let i=5; i<=pos; i--){
-//   filq[i].fill = "#eee3ff"
-//   this.setState({
-//      fillw: filq
-//     })
-//   }
-// }
 
-
-// showColor1 = (pos, item) => {
-
-//   const fil = this.state.fill
-//   fil[pos].fill = '#B97EFF'
-//   if (item.id === 2) {
-//   this.setState({
-//      fill: fil 
-//     })
-//   }
-// }
+mouseOut = () => {
+  this.setState({
+     fill: this.state.fill
+    })
+}
 
   handleClose = () => {
     // const temp = false
@@ -102,17 +208,6 @@ showColor = (pos) => {
   handl = this.handleClose ? "100px" : "251px";
 
   // hand = this.state.close ? "none" : "inline-block";
-  // ha = (e) => {
-  //   console.log(e.target)
-  //  const showColor = (pos, item) => {
-  //     const fil = this.state.fill
-  //     fil[pos].fill = '#B97EFF'
-  //     // console.log(e.target)
-  //     this.setState({
-  //        fill: fil 
-  //       })
-  // }
-  // };
 
   render() {
 
@@ -126,10 +221,134 @@ showColor = (pos) => {
             fill={item.fill}
             stroke="white"
             strokeWidth="0.5"
+            // onMouseMove={()=>this.showColor(pos)}
             onClick={()=>this.showColor(pos)}
+            
+            // onPointerEnter={()=>this.showColor2(pos)}
+            // onMouseEnter={()=>this.showColor2(pos)}
+            onMouseOver={()=>this.mouseOver(pos)}
+            onMouseOut={this.mouseOut}
             />
       )
   });
+
+
+  const path1 = this.state.fill1.map((item, pos) => {
+    return (
+
+      <path
+          key={item.id}
+          id={item.id}
+          className="yellow"
+          d={item.d}
+          fill={item.fill}
+          stroke="white"
+          strokeWidth="0.5"
+          onClick={()=>this.showColor1(pos)}
+          
+          />
+    )
+});
+
+const path2 = this.state.fill2.map((item, pos) => {
+  return (
+
+    <path
+        key={item.id}
+        id={item.id}
+        className="pink"
+        d={item.d}
+        fill={item.fill}
+        stroke="white"
+        strokeWidth="0.5"
+
+        onClick={()=>this.showColor2(pos)}
+        />
+  )
+});
+
+const path3 = this.state.fill3.map((item, pos) => {
+  return (
+
+    <path
+        key={item.id}
+        id={item.id}
+        className="green"
+        d={item.d}
+        fill={item.fill}
+        stroke="white"
+        strokeWidth="0.5"
+
+        onClick={()=>this.showColor3(pos)}
+        />
+  )
+});
+
+const path4 = this.state.fill4.map((item, pos) => {
+  return (
+    <path
+        key={item.id}
+        id={item.id}
+        className="red"
+        d={item.d}
+        fill={item.fill}
+        stroke="white"
+        strokeWidth="0.5"
+        onClick={()=>this.showColor4(pos)}
+        />
+
+        
+  )
+});
+
+const path5 = this.state.fill5.map((item, pos) => {
+  return (
+
+    <path
+        key={item.id}
+        id={item.id}
+        className="lightBlue"
+        d={item.d}
+        fill={item.fill}
+        stroke="white"
+        strokeWidth="0.5"
+        onClick={()=>this.showColor5(pos)}
+        />
+  )
+});
+
+const path6 = this.state.fill6.map((item, pos) => {
+  return (
+
+    <path
+        key={item.id}
+        id={item.id}
+        className="orange"
+        d={item.d}
+        fill={item.fill}
+        stroke="white"
+        strokeWidth="0.5"
+        onClick={()=>this.showColor6(pos)}
+        />
+  )
+});
+
+const path7 = this.state.fill7.map((item, pos) => {
+  return (
+
+    <path
+        key={item.id}
+        id={item.id}
+        className="blue"
+        d={item.d}
+        fill={item.fill}
+        stroke="white"
+        strokeWidth="0.5"
+        onClick={()=>this.showColor7(pos)}
+        />
+  )
+});
+
 
     return (
       <>
@@ -142,7 +361,7 @@ showColor = (pos) => {
           <ul>
             <li onClick={this.handleClose} >
               <svg
-              style={{display: this.state.close ? "none" : "inline-block"}}
+                style={{display: this.state.close ? "none" : "inline-block"}}
                 width="11"
                 height="19"
                 viewBox="0 0 11 19"
@@ -304,305 +523,19 @@ showColor = (pos) => {
                 viewBox="0 0 310 308"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                // onClick={()=>this.showColor(pos)}
               >
                 <g clipPath="url(#clip0)">
-                  <path
-                    className="blue"
-                    d="M71.7302 66.9701L58.1802 53.3501C83.7367 28.4455 117.879 14.3025 153.56 13.8401V33.0901C122.961 33.5363 93.689 45.6558 71.7302 66.9701Z"
-                    fill="#ddf0ff"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-
-
 
                   {path}
-
-
+                  {path1}
+                  {path2}
+                  {path3}
+                  {path4}
+                  {path5}
+                  {path6}
+                  {path7}
                   
-                  {/* <path
-                    className="purple"
-                    d={this.state.filll[0].d}
-                    // "M157.5 13.8401C193.195 14.2982 227.35 28.4493 252.91 53.3701L239.32 66.9901C217.363 45.6761 188.097 33.5502 157.5 33.0901V13.8401Z"
-                    fill={this.state.filll[0].fil}
-                    stroke="white"
-                    onClick={this.handleP}
-                    strokeWidth="0.5"
-                  /> */}
-                  <path
-                    className="yellow"
-                    d="M242.18 69.8099L255.77 56.1899C280.683 81.7548 294.832 115.907 295.3 151.6H276.05C275.585 121.019 263.471 91.7666 242.18 69.8099Z"
-                    fill="#fdfce3"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="pink"
-                    d="M276 155.59H295.26C294.794 191.284 280.644 225.436 255.73 251L242.18 237.46C263.476 215.478 275.574 186.193 276 155.59Z"
-                    fill="#ffe2f8"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="green"
-                    d="M239.3 240.22L252.91 253.82C227.348 278.739 193.195 292.893 157.5 293.36V274.1C188.087 273.639 217.345 261.521 239.3 240.22Z"
-                    fill="#e5fff0"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="red"
-                    d="M71.6999 240.24C93.6628 261.54 122.929 273.651 153.52 274.1V293.36C117.825 292.9 83.6707 278.749 58.1099 253.83L71.6999 240.24Z"
-                    fill="#ffe1e1"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="lightBlue"
-                    opacity="0.2"
-                    d="M35.02 155.59C35.4737 186.174 47.5888 215.43 68.89 237.38L55.3 250.97C30.3855 225.418 16.2347 191.275 15.77 155.59H35.02Z"
-                    fill="#69E4FF"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="orange"
-                    opacity="0.2"
-                    d="M68.89 69.8102C47.594 91.764 35.4797 121.018 35.02 151.6H15.77C16.2307 115.909 30.3816 81.7574 55.3 56.2002L68.89 69.8102Z"
-                    fill="#FFA876"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="blue"
-                    d="M146.87 142.13L129.3 124.56C135.975 118.528 144.534 114.995 153.52 114.56V139.41C151.107 139.731 148.816 140.668 146.87 142.13Z"
-                    fill={this.state.fill === true ? "#64BDFF" : "#ddf0ff"}
-                    stroke="white"
-                    strokeWidth="0.5"
-                    onClick={this.handlePostDescriptionChangel}
-                  />
-                  <path
-                    className="blue"
-                    d="M128.95 124.2L107.62 102.88C120.056 91.1075 136.402 84.3415 153.52 83.8801V114.04C144.402 114.483 135.719 118.074 128.95 124.2Z"
-                    fill={this.state.fill === true ? "#64BDFF" : "#ddf0ff"}
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="blue"
-                    d="M107.3 102.53L88.0098 83.2501C105.644 66.2676 129.042 56.5738 153.52 56.1101V83.3701C136.277 83.837 119.816 90.6609 107.3 102.53Z"
-                    fill="#ddf0ff"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="blue"
-                    d="M87.6301 82.8901L72.0801 67.3401C93.9385 46.1298 123.066 34.0589 153.52 33.5901V55.5901C128.9 56.0539 105.364 65.8054 87.6301 82.8901Z"
-                    fill="#ddf0ff"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  {/* <path
-                    className="purple"
-                    d={this.state.filll[1].d}
-                    // "M157.5 139.37V114.53C166.486 114.965 175.045 118.498 181.72 124.53L164.18 142.13C162.231 140.645 159.929 139.694 157.5 139.37Z"
-                    fill={this.state.filll[1].fil}
-                    // '#eee3ff'
-                    stroke="white"
-                    strokeWidth="0.5"
-                    onClick={this.handleP}
-                  /> */}
-                  {/* <path
-                    className="purple"
-                    d="M157.5 55.6001V33.6001C187.954 34.0669 217.083 46.1381 238.94 67.3501L223.39 82.9001C205.654 65.8179 182.12 56.0669 157.5 55.6001Z"
-                    fill="#eee3ff"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="purple"
-                    d="M157.53 83.3701V56.1101C182.008 56.5719 205.407 66.2659 223.04 83.2501L203.76 102.53C191.237 90.6651 174.774 83.842 157.53 83.3701Z"
-                    fill="#eee3ff"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="purple"
-                    d="M157.5 114.03V83.8701C174.618 84.3314 190.964 91.0975 203.4 102.87L182.08 124.19C175.31 118.06 166.622 114.469 157.5 114.03Z"
-                    fill="#eee3ff"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  /> */}
-                  <path
-                    className="yellow"
-                    d="M166.98 144.96L184.55 127.39C190.575 134.066 194.107 142.619 194.55 151.6H169.7C169.377 149.19 168.441 146.904 166.98 144.96Z"
-                    fill="#fdfce3"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="yellow"
-                    d="M184.92 127.03L206.22 105.74C217.989 118.163 224.755 134.494 225.22 151.6H195.06C194.628 142.483 191.044 133.798 184.92 127.03Z"
-                    fill="#fdfce3"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="yellow"
-                    d="M206.58 105.38L225.86 86.1001C242.839 103.733 252.532 127.127 253 151.6H225.76C225.28 134.356 218.45 117.897 206.58 105.38Z"
-                    fill="#fdfce3"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="yellow"
-                    d="M226.18 85.7202L241.74 70.1702C262.938 92.0296 274.998 121.153 275.46 151.6H253.46C253.002 126.985 243.257 103.453 226.18 85.7202Z"
-                    fill="#fdfce3"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="pink"
-                    d="M169.73 155.59H194.58C194.14 164.575 190.607 173.132 184.58 179.81L167.01 162.24C168.472 160.293 169.409 158.003 169.73 155.59Z"
-                    fill="#ffe2f8"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="pink"
-                    d="M253.5 155.59H275.5C275.041 186.04 262.981 215.167 241.78 237.03L226.23 221.46C243.305 203.73 253.046 180.201 253.5 155.59Z"
-                    fill="#ffe2f8"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="pink"
-                    d="M225.76 155.59H253C252.541 180.077 242.847 203.487 225.86 221.13L206.58 201.84C218.457 189.315 225.287 172.844 225.76 155.59Z"
-                    fill="#ffe2f8"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="pink"
-                    d="M195.1 155.59H225.26C224.803 172.71 218.036 189.056 206.26 201.49L184.93 180.16C191.067 173.397 194.662 164.712 195.1 155.59Z"
-                    fill="#ffe2f8"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="green"
-                    d="M223.39 224.3L238.94 239.85C217.086 261.066 187.955 273.138 157.5 273.6V251.6C182.121 251.137 205.657 241.386 223.39 224.3Z"
-                    fill="#e5fff0"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="green"
-                    d="M203.73 204.66L223.04 223.95C205.396 240.935 181.987 250.629 157.5 251.09V223.82C174.744 223.348 191.207 216.525 203.73 204.66Z"
-                    fill="#e5fff0"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="green"
-                    d="M182.11 182.99L203.4 204.31C190.972 216.078 174.638 222.843 157.53 223.31V193.16C166.653 192.718 175.341 189.124 182.11 182.99Z"
-                    fill="#e5fff0"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="green"
-                    d="M164.18 165.06L181.75 182.64C175.071 188.667 166.515 192.2 157.53 192.64V167.79C159.945 167.47 162.236 166.529 164.18 165.06Z"
-                    fill="#e5fff0"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="red"
-                    d="M146.87 165.07C148.813 166.543 151.104 167.49 153.52 167.82V192.66C144.533 192.226 135.975 188.693 129.3 182.66L146.87 165.07Z"
-                    fill="#ffe1e1"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="red"
-                    d="M87.6301 224.32C105.37 241.391 128.904 251.131 153.52 251.59V273.59C123.069 273.127 93.9416 261.063 72.0801 239.86L87.6301 224.32Z"
-                    fill="#ffe1e1"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="red"
-                    d="M107.27 204.66C119.793 216.538 136.267 223.363 153.52 223.82V251.09C129.034 250.627 105.625 240.934 87.98 223.95L107.27 204.66Z"
-                    fill="#ffe1e1"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="red"
-                    d="M128.95 182.99C135.715 189.124 144.399 192.718 153.52 193.16V223.32C136.412 222.853 120.077 216.088 107.65 204.32L128.95 182.99Z"
-                    fill="#ffe1e1"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="lightBlue"
-                    opacity="0.2"
-                    d="M57.52 155.59C57.9872 180.202 67.7344 203.729 84.81 221.46L69.24 237.01C48.0399 215.148 35.9798 186.02 35.52 155.57L57.52 155.59Z"
-                    fill="#69E4FF"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="lightBlue"
-                    opacity="0.2"
-                    d="M85.2601 155.59C85.7326 172.844 92.5632 189.315 104.44 201.84L85.1801 221.13C68.1965 203.485 58.5032 180.077 58.04 155.59H85.2601Z"
-                    fill="#69E4FF"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="lightBlue"
-                    d="M126.12 180.16L104.8 201.46C93.0256 189.025 86.2593 172.679 85.7998 155.56H115.96C116.393 164.69 119.984 173.385 126.12 180.16Z"
-                    fill="#69E4FF"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="lightBlue"
-                    d="M141.29 155.59C141.619 158.008 142.57 160.3 144.05 162.24L126.48 179.81C120.444 173.137 116.91 164.577 116.48 155.59H141.29Z"
-                    fill="#69E4FF"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="orange"
-                    d="M84.81 85.7202C67.7296 103.452 57.9817 126.984 57.52 151.6H35.52C35.9813 121.153 48.0414 92.0296 69.24 70.1702L84.81 85.7202Z"
-                    fill="#FFA876"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="orange"
-                    d="M104.45 105.38C92.5763 117.896 85.7426 134.355 85.26 151.6H58.02C58.4891 127.114 68.1898 103.709 85.18 86.0701L104.45 105.38Z"
-                    fill="#FFA876"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="orange"
-                    d="M126.12 127.03C119.988 133.796 116.393 142.48 115.95 151.6H85.7598C86.229 134.495 92.9946 118.165 104.76 105.74L126.12 127.03Z"
-                    fill="#FFA876"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
-                  <path
-                    className="orange"
-                    d="M144.05 144.96C142.572 146.898 141.621 149.186 141.29 151.6H116.45C116.88 142.616 120.414 134.059 126.45 127.39L144.05 144.96Z"
-                    fill="#FFA876"
-                    stroke="white"
-                    strokeWidth="0.5"
-                  />
                   <path
                     d="M7.43995 138.14C7.40025 138.569 7.27078 138.984 7.05994 139.36C6.87281 139.683 6.60817 139.955 6.28992 140.15C5.98514 140.32 5.63832 140.4 5.28992 140.38L5.38996 139.49C5.61306 139.505 5.83488 139.445 6.01997 139.32C6.215 139.193 6.3735 139.017 6.47993 138.81C6.59772 138.579 6.67231 138.328 6.69996 138.07C6.73801 137.785 6.71413 137.495 6.62995 137.22C6.5581 136.987 6.42718 136.777 6.24995 136.61C6.07004 136.448 5.84152 136.349 5.59992 136.33C5.35107 136.294 5.09719 136.332 4.86994 136.44C4.64173 136.56 4.45391 136.744 4.32996 136.97C4.16884 137.248 4.07306 137.559 4.04993 137.88L3.97993 138.46L3.20997 138.37L3.26997 137.79C3.30739 137.529 3.28691 137.262 3.20997 137.01C3.13496 136.793 3.00385 136.6 2.82996 136.45C2.64221 136.304 2.41682 136.213 2.17994 136.19C1.95913 136.157 1.7334 136.188 1.52991 136.28C1.33391 136.368 1.16731 136.51 1.04993 136.69C0.92157 136.892 0.842783 137.122 0.819953 137.36C0.789357 137.602 0.809795 137.847 0.879951 138.08C0.93565 138.3 1.04567 138.503 1.19996 138.67C1.36388 138.822 1.56905 138.923 1.78992 138.96L1.69996 139.81C1.32543 139.77 0.974321 139.608 0.699958 139.35C0.457972 139.099 0.279634 138.794 0.179939 138.46C0.0565043 138.083 0.0189352 137.683 0.0699533 137.29C0.105926 136.889 0.243557 136.503 0.469917 136.17C0.669618 135.882 0.947104 135.656 1.26997 135.52C1.58259 135.377 1.92916 135.325 2.26997 135.37C2.63698 135.398 2.98394 135.549 3.25574 135.797C3.52755 136.045 3.70859 136.377 3.76997 136.74H3.82996C3.92689 136.329 4.17733 135.972 4.52991 135.74C4.88675 135.515 5.31178 135.422 5.72993 135.48C6.10024 135.528 6.44806 135.685 6.72993 135.93C7.0239 136.182 7.24201 136.511 7.35993 136.88C7.48046 137.289 7.50782 137.719 7.43995 138.14Z"
                     fill="#25315B"
@@ -715,10 +648,10 @@ showColor = (pos) => {
                     d="M131.87 8.0701C131.537 8.13051 131.195 8.11342 130.87 8.02011C130.582 7.93939 130.322 7.78008 130.12 7.56009C129.906 7.31953 129.77 7.01965 129.73 6.7001C129.675 6.43968 129.696 6.16915 129.79 5.92014C129.879 5.70876 130.025 5.52557 130.21 5.39011C130.402 5.24432 130.614 5.12651 130.84 5.04013C131.078 4.94191 131.322 4.85842 131.57 4.79013L132.35 4.56009C132.504 4.5315 132.651 4.47013 132.78 4.3801C132.824 4.34513 132.857 4.29822 132.874 4.24496C132.892 4.19171 132.894 4.13443 132.88 4.08011C132.847 3.78313 132.7 3.51055 132.47 3.3201C132.339 3.23221 132.192 3.1726 132.037 3.14505C131.882 3.1175 131.723 3.12264 131.57 3.16013C131.283 3.1851 131.009 3.29287 130.782 3.47037C130.554 3.64787 130.384 3.88747 130.29 4.16013L129.46 4.00009C129.536 3.68532 129.687 3.39366 129.9 3.15012C130.104 2.93426 130.349 2.76092 130.62 2.64011C131.061 2.43732 131.545 2.34465 132.03 2.37009C132.27 2.37305 132.507 2.42054 132.73 2.5101C132.975 2.6179 133.188 2.78657 133.35 3.00009C133.555 3.29727 133.682 3.64108 133.72 4.00009L134.28 7.55014L133.45 7.68008L133.34 6.9501H133.29C133.241 7.10144 133.166 7.24341 133.07 7.37009C132.942 7.53933 132.782 7.68204 132.6 7.79013C132.377 7.93058 132.129 8.0257 131.87 8.0701ZM131.87 7.30014C132.16 7.26351 132.435 7.15334 132.67 6.98013C132.864 6.82978 133.012 6.62915 133.1 6.40012C133.183 6.18704 133.207 5.95571 133.17 5.73013L133.05 4.97012C132.995 5.03874 132.923 5.09066 132.84 5.12009C132.715 5.18466 132.584 5.23823 132.45 5.28012L132.01 5.41013L131.67 5.5101C131.47 5.5685 131.276 5.64555 131.09 5.74014C130.926 5.82064 130.785 5.94096 130.68 6.09012C130.586 6.24616 130.554 6.43165 130.59 6.61014C130.604 6.73874 130.651 6.86157 130.726 6.96671C130.801 7.07184 130.903 7.15567 131.02 7.21011C131.288 7.33659 131.591 7.36834 131.88 7.30014H131.87Z"
                     fill="#25315B"
                   />
-                  <path
+                  {/* <path
                     d="M178.35 2.75998L177.48 2.65C177.463 2.40767 177.402 2.17045 177.3 1.94999C177.198 1.74614 177.059 1.56306 176.89 1.41001C176.726 1.25245 176.537 1.12394 176.33 1.03C176.113 0.938508 175.884 0.877925 175.65 0.850011C175.232 0.789086 174.806 0.848021 174.42 1.01999C174.011 1.20851 173.663 1.51041 173.42 1.88999C173.137 2.35954 172.96 2.885 172.9 3.42997C172.816 3.97144 172.854 4.52489 173.01 5.05002C173.131 5.46428 173.37 5.83393 173.699 6.11307C174.028 6.39222 174.432 6.56849 174.86 6.61997C175.095 6.65502 175.335 6.65502 175.57 6.61997C175.794 6.58666 176.01 6.51569 176.21 6.41001C176.409 6.30111 176.589 6.15909 176.74 5.99003C176.895 5.80386 177.014 5.59013 177.09 5.36002L177.97 5.48002C177.862 5.81908 177.696 6.13703 177.48 6.42002C177.274 6.68301 177.02 6.90369 176.73 7.06998C176.445 7.2436 176.129 7.36234 175.8 7.42002C175.343 7.50777 174.872 7.49603 174.42 7.38559C173.968 7.27516 173.545 7.06859 173.18 6.78C172.72 6.40627 172.373 5.91084 172.18 5.35001C171.978 4.70358 171.927 4.01938 172.03 3.35001C172.1 2.66631 172.329 2.00854 172.7 1.42997C173.012 0.933521 173.462 0.539221 173.995 0.29575C174.528 0.0522797 175.121 -0.0296919 175.7 0.0599717C176.047 0.101749 176.385 0.199735 176.7 0.350011C177.003 0.492993 177.277 0.689437 177.51 0.929967C177.742 1.16702 177.929 1.44505 178.06 1.74997C178.217 2.06641 178.315 2.40859 178.35 2.75998Z"
                     fill="#25315B"
-                  />
+                  /> */}
                   <path
                     d="M181.18 8.45988C180.71 8.39161 180.27 8.19035 179.91 7.87986C179.571 7.58844 179.327 7.20171 179.21 6.76988C179.099 6.27611 179.099 5.76364 179.21 5.26988C179.294 4.76518 179.485 4.28435 179.77 3.8599C180.023 3.4986 180.368 3.21191 180.77 3.02989C181.193 2.85169 181.66 2.80296 182.11 2.88987C182.391 2.94298 182.661 3.04088 182.91 3.17985C183.173 3.32202 183.402 3.52 183.58 3.75987C183.772 4.03543 183.902 4.3493 183.96 4.67985C184.045 5.10908 184.045 5.55067 183.96 5.9799L183.9 6.32987L179.76 5.6099L179.89 4.88987L183.19 5.46989C183.256 5.19376 183.256 4.90599 183.19 4.62986C183.116 4.37963 182.974 4.15476 182.78 3.9799C182.567 3.79698 182.307 3.6759 182.03 3.62986C181.73 3.57549 181.421 3.61029 181.14 3.7299C180.878 3.84577 180.65 4.02849 180.48 4.25987C180.31 4.49838 180.193 4.77149 180.14 5.05985L180.06 5.5399C179.979 5.8919 179.979 6.2579 180.06 6.6099C180.142 6.89666 180.306 7.15359 180.53 7.34989C180.734 7.50673 180.968 7.62112 181.217 7.68638C181.466 7.75164 181.725 7.76646 181.98 7.7299C182.162 7.69934 182.336 7.63122 182.49 7.52989C182.644 7.42079 182.773 7.28118 182.87 7.11985L183.62 7.4799C183.493 7.73607 183.304 7.95613 183.07 8.11985C182.828 8.29204 182.552 8.41132 182.26 8.46989C181.903 8.53933 181.536 8.53592 181.18 8.45988Z"
                     fill="#25315B"
