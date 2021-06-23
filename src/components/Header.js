@@ -4,10 +4,11 @@ import vector from "../img/vector.svg";
 import photo from "../img/profile_photo.png";
 export const Header = ({closes}) => {
 // console.log(props)
-  const closess = closes ? "1342px":"1186px"
+  // const closess = closes ? "1342px":"1186px"
   // "1342px":"1186px"
   return (
-    <header style={{ width: closess}}>
+    <header>
+      {/* style={{ width: closess}} */}
       <h1>Колесо баланса</h1>
       <div className="btn">
         <button className='btn1'>
