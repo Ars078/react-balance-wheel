@@ -8,22 +8,29 @@
 
 .block_row {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 main {
   display: flex;
-  flex: 0 1 100%;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
 }
 
 @media (max-width: 1200px) {
-  .content {
+  .main {
     width: 970px;
+  }
+  .menu1 span{
+    width: 50px;
   }
 }
 
 @media (max-width: 992px) {
-  .content {
+  .main {
     width: 750px;
   }
   .container_row {
@@ -47,8 +54,8 @@ main {
 }
 
 @media (max-width: 767px) {
-  .content {
-    max-width: none;
+  .main {
+    width: 550px;
   }
 }
 
@@ -69,9 +76,8 @@ main h2 {
   display: flex;
 }
 
-.menu {
-  width: 251px;
-  height: 100vh;
+.menu1 {
+  height: 950px;
   background-color: white;
   padding-top: 15px;
 }
@@ -130,7 +136,6 @@ main p {
 }
 
 .menu .close button {
-  display: block;
   width: 175px;
   padding: 15px;
   border: 1px solid rgba(37, 49, 91, 1);
@@ -148,6 +153,7 @@ main p {
   flex: 0 1 52.794%;
   margin-left: 41px;
   margin-right: 20px;
+  
 }
 
 .rectangle {
@@ -157,9 +163,17 @@ main p {
   border-radius: 15px;
 }
 
+.svg_name {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  /* transform: skewX(10deg); */
+}
+
 .wheel {
   width: 310px;
   margin: 40px auto;
+  position: relative;
 }
 
 .rectangle path:hover {
@@ -174,7 +188,7 @@ main p {
   fill: #b97eff;
 }
 
-.yellow:hover:before {
+.yellow:hover {
   fill: #fbf681;
 }
 
@@ -198,13 +212,13 @@ main p {
   fill: #ffa876;
 }
 
-a {
+.block_row a {
   text-decoration: none;
   margin: 0 10px;
   color: black;
 }
 
-a:hover {
+.block_row a:hover {
   font-weight: bold;
   border-bottom: 3px solid #6cffd5;
 }
@@ -375,7 +389,6 @@ input:checked + label:before {
 }
 
 .g1 {
-  display: flex;
   flex-direction: column;
   margin-right: 10px;
 }

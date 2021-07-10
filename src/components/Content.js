@@ -174,6 +174,7 @@ export class Content extends Component {
     }
   };
 
+
   mouseOut = () => {
     console.log("вне");
     this.setState({
@@ -207,12 +208,6 @@ export class Content extends Component {
     });
   };
 
-  handle = this.handleDisabled ? "none" : "2px solid red";
-
-  handl = this.handleClose ? "100px" : "251px";
-
-  // hand = this.state.close ? "none" : "inline-block";
-
   render() {
     const path = this.state.fill.map((item, pos) => {
       return (
@@ -228,8 +223,8 @@ export class Content extends Component {
           onClick={() => this.showColor(pos)}
           // onPointerEnter={()=>this.showColor2(pos)}
           // onMouseEnter={()=>this.showColor2(pos)}
-          onMouseOver={() => this.mouseOver(pos)}
-          onMouseOut={this.mouseOut}
+          // onMouseOver={() => this.mouseOver(pos)}
+          // onMouseOut={this.mouseOut}
           // onMouseLeave={this.mouseOut1}
         />
       );
@@ -340,30 +335,37 @@ export class Content extends Component {
       );
     });
 
+    const cloceMenu = this.state.close ? "0 1 6.598%" : "0 1 21.111%"
+    const closeMenuElements = this.state.close ? "none" : "inline-block"
+    const closeMenuElement = this.state.close ? "rotate(180deg)" : "rotate(0deg)"
+    const closeMenuElemen = this.state.close ? "S" : "Samo"
+    // const closeMenuElemen = this.state.close ? "all 0.3s ease 0s" : "all 0.3s ease 0s"
+    const handle = this.handleDisabled ? "none" : null;
     return (
       <>
+      <div className="menu1"
+      style={{ flex: cloceMenu}}
+      >
         <div
           className="menu"
-          style={{ width: this.state.close ? "6.598%" : "21.111%" }}
+          
         >
-          <h1 style={{ display: this.state.close ? "none" : "inline-block" }}>
-            Samo
-          </h1>
-          <h1 style={{ display: this.state.close ? "inline-block" : "none" }}>
-            S
+          <h1>
+            <a href="#">{closeMenuElemen}</a>
           </h1>
           <div className="text">
             <ul>
               <li onClick={this.handleClose}>
                 <svg
                   style={{
-                    display: this.state.close ? "none" : "inline-block",
+                    transform: closeMenuElement, 
                   }}
                   width="11"
                   height="19"
                   viewBox="0 0 11 19"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className='show_menu'
                 >
                   <path
                     d="M9.5 2L2 9.5L9.5 17"
@@ -373,28 +375,9 @@ export class Content extends Component {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <svg
-                  style={{
-                    display: this.state.close ? "inline-block" : "none",
-                  }}
-                  width="11"
-                  height="19"
-                  viewBox="0 0 11 19"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 17L9.5 9.5L2 2"
-                    stroke="#25315B"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-
                 <span
                   style={{
-                    display: this.state.close ? "none" : "inline-block",
+                    display: closeMenuElements,
                   }}
                 >
                   Свернуть
@@ -405,7 +388,7 @@ export class Content extends Component {
           <ul className="menu_list">
             <li className="li1">
               <span
-                style={{ display: this.state.close ? "none" : "inline-block" }}
+                style={{ display: closeMenuElements }}
               >
                 Колесо баланса
               </span>
@@ -428,7 +411,7 @@ export class Content extends Component {
                 />
               </svg>
               <span
-                style={{ display: this.state.close ? "none" : "inline-block" }}
+                style={{ display: closeMenuElements }}
               >
                 Дневник
               </span>
@@ -447,7 +430,7 @@ export class Content extends Component {
                 />
               </svg>
               <span
-                style={{ display: this.state.close ? "none" : "inline-block" }}
+                style={{ display: closeMenuElements }}
               >
                 Календарь
               </span>
@@ -466,7 +449,7 @@ export class Content extends Component {
                 />
               </svg>
               <span
-                style={{ display: this.state.close ? "none" : "inline-block" }}
+                style={{ display: closeMenuElements }}
               >
                 Мои цели
               </span>
@@ -485,7 +468,7 @@ export class Content extends Component {
                 />
               </svg>
               <span
-                style={{ display: this.state.close ? "none" : "inline-block" }}
+                style={{ display: closeMenuElements }}
               >
                 Мои ценности
               </span>
@@ -504,7 +487,7 @@ export class Content extends Component {
                 />
               </svg>
               <span
-                style={{ display: this.state.close ? "none" : "inline-block" }}
+                style={{ display: closeMenuElements }}
               >
                 Списки
               </span>
@@ -522,7 +505,7 @@ export class Content extends Component {
                 <rect x="14" y="6" width="5" height="13" fill="#25315B" />
               </svg>
               <span
-                style={{ display: this.state.close ? "none" : "inline-block" }}
+                style={{ display: closeMenuElements }}
               >
                 Итоги
               </span>
@@ -541,7 +524,7 @@ export class Content extends Component {
                 />
               </svg>
               <span
-                style={{ display: this.state.close ? "none" : "inline-block" }}
+                style={{ display: closeMenuElements }}
               >
                 Настройки
               </span>
@@ -554,7 +537,7 @@ export class Content extends Component {
           </div>
         </div>
         {/* </div> */}
-
+        </div>
         <div className="content">
           <div className="header3">
             <Header closes={this.state.close} />
@@ -564,11 +547,11 @@ export class Content extends Component {
               <div className="container_row">
                 <div className="rectangle1">
                   <div className="rectangle">
-                    <a href="/">
+                    <a href="#">
                       <strong>Действие</strong>
                     </a>
-                    <a href="/">Состояние</a>
-                    <a href="/">Динамика</a>
+                    <a href="#">Состояние</a>
+                    <a href="#">Динамика</a>
                     <div className="wheel">
                       <svg
                         width="310"
@@ -586,7 +569,7 @@ export class Content extends Component {
                           {path5}
                           {path6}
                           {path7}
-
+                        
                           <path
                             d="M7.43995 138.14C7.40025 138.569 7.27078 138.984 7.05994 139.36C6.87281 139.683 6.60817 139.955 6.28992 140.15C5.98514 140.32 5.63832 140.4 5.28992 140.38L5.38996 139.49C5.61306 139.505 5.83488 139.445 6.01997 139.32C6.215 139.193 6.3735 139.017 6.47993 138.81C6.59772 138.579 6.67231 138.328 6.69996 138.07C6.73801 137.785 6.71413 137.495 6.62995 137.22C6.5581 136.987 6.42718 136.777 6.24995 136.61C6.07004 136.448 5.84152 136.349 5.59992 136.33C5.35107 136.294 5.09719 136.332 4.86994 136.44C4.64173 136.56 4.45391 136.744 4.32996 136.97C4.16884 137.248 4.07306 137.559 4.04993 137.88L3.97993 138.46L3.20997 138.37L3.26997 137.79C3.30739 137.529 3.28691 137.262 3.20997 137.01C3.13496 136.793 3.00385 136.6 2.82996 136.45C2.64221 136.304 2.41682 136.213 2.17994 136.19C1.95913 136.157 1.7334 136.188 1.52991 136.28C1.33391 136.368 1.16731 136.51 1.04993 136.69C0.92157 136.892 0.842783 137.122 0.819953 137.36C0.789357 137.602 0.809795 137.847 0.879951 138.08C0.93565 138.3 1.04567 138.503 1.19996 138.67C1.36388 138.822 1.56905 138.923 1.78992 138.96L1.69996 139.81C1.32543 139.77 0.974321 139.608 0.699958 139.35C0.457972 139.099 0.279634 138.794 0.179939 138.46C0.0565043 138.083 0.0189352 137.683 0.0699533 137.29C0.105926 136.889 0.243557 136.503 0.469917 136.17C0.669618 135.882 0.947104 135.656 1.26997 135.52C1.58259 135.377 1.92916 135.325 2.26997 135.37C2.63698 135.398 2.98394 135.549 3.25574 135.797C3.52755 136.045 3.70859 136.377 3.76997 136.74H3.82996C3.92689 136.329 4.17733 135.972 4.52991 135.74C4.88675 135.515 5.31178 135.422 5.72993 135.48C6.10024 135.528 6.44806 135.685 6.72993 135.93C7.0239 136.182 7.24201 136.511 7.35993 136.88C7.48046 137.289 7.50782 137.719 7.43995 138.14Z"
                             fill="#25315B"
@@ -1022,6 +1005,7 @@ export class Content extends Component {
                           </clipPath>
                         </defs>
                       </svg>
+                      <p className="svg_name">gergrsg</p>
                     </div>
                   </div>
                 </div>
@@ -1048,7 +1032,7 @@ export class Content extends Component {
                       defaultValue={this.state.postDescription}
                       onChange={this.handlePostDescriptionChange}
                       disabled={this.state.disabled}
-                      style={{ border: this.handle }}
+                      style={{ border: handle }}
                     />
                   </div>
                   <div className="col1 c2">
